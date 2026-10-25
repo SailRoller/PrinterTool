@@ -1,0 +1,16 @@
+# .NET 构建产物与中间文件（dotnet build/publish 可随时重新生成）
+bin/
+obj/
+build-test/
+
+# 发布输出（分发 exe 请走 GitHub Releases，不要提交进仓库）
+publish/
+publish-lite/
+*.exe
+
+# 运行时在 exe 旁生成的数据（可能含内网主机名/共享路径等敏感信息）
+logs/
+backups/
+
+# 图标生成脚本的临时产物（app.ico 已入库，如需改动脚本后重新生成）
+tools/*.tmp

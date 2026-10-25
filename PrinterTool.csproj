@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <RootNamespace>PrinterTool</RootNamespace>
+    <AssemblyName>PrinterTool</AssemblyName>
+    <Version>0.4.0</Version>
+    <!-- exe 图标 + 单文件压缩（WinForms 不支持 trim，压缩是安全的体积优化） -->
+    <ApplicationIcon>app.ico</ApplicationIcon>
+    <EnableCompressionInSingleFile>true</EnableCompressionInSingleFile>
+    <!-- 分发版本带管理员清单；本地测试构建可用 -p:NoAdminManifest=true 跳过 -->
+    <ApplicationManifest Condition="'$(NoAdminManifest)' != 'true'">app.manifest</ApplicationManifest>
+    <!-- 不依赖源生成器，初始化在 Program.cs 中显式完成 -->
+    <GenerateApplicationConfigurationEnabled>false</GenerateApplicationConfigurationEnabled>
+    <SatelliteResourceLanguages>zh-Hans;en</SatelliteResourceLanguages>
+  </PropertyGroup>
+
+</Project>
